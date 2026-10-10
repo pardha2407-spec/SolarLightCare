@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Manage Complaints - SolarLightCare</title>
+
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+    <!-- Navigation -->
+    <nav class="navbar">
+
+        <div class="container nav-container">
+
+            <a href="index.html" class="logo">
+                ☀ SolarLightCare
+            </a>
+
+            <div class="nav-links">
+                <a href="admin-dashboard.html">Dashboard</a>
+                <a href="manage-complaints.html">Complaints</a>
+                <a href="assign-technician.html">Assign Technician</a>
+                <a href="index.html">Logout</a>
+            </div>
+
+        </div>
+
+    </nav>
+
+
+    <!-- Manage Complaints -->
+    <main class="manage-page">
+
+        <div class="container">
+
+            <!-- Header -->
+            <section class="manage-header">
+
+                <div>
+
+                    <p class="dashboard-label">
+                        ADMIN PORTAL
+                    </p>
+
+                    <h1>Manage Complaints</h1>
+
+                    <p>
+                        Review, verify, and manage reported streetlight faults.
+                    </p>
+
+                </div>
+
+            </section>
+
+
+            <!-- Filters -->
+            <section class="manage-filters">
+
+                <div class="form-group">
+
+                    <label for="status">
+                        Status
+                    </label>
+
+                    <select id="status">
+
+                        <option value="all">
+                            All Status
+                        </option>
+
+                        <option value="pending">
+                            Pending
+                        </option>
+
+                        <option value="verified">
+                            Verified
+                        </option>
+
+                        <option value="assigned">
+                            Assigned
+                        </option>
+
+                        <option value="progress">
+                            In Progress
+                        </option>
+
+                        <option value="resolved">
+                            Resolved
+                        </option>
+
+                    </select>
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label for="priority">
+                        Priority
+                    </label>
+
+                    <select id="priority">
+
+                        <option value="all">
+                            All Priority
+                        </option>
+
+                        <option value="high">
+                            High
+                        </option>
+
+                        <option value="medium">
+                            Medium
+                        </option>
+
+                        <option value="low">
+                            Low
+                        </option>
+
+                    </select>
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label for="search">
+                        Search
+                    </label>
+
+                    <input
+                        type="text"
+                        id="search"
+                        placeholder="Complaint ID or Streetlight ID"
+                    >
+
+                </div>
+
+            </section>
+
+
+            <!-- Complaints Table -->
+            <section class="manage-card">
+
+                <div class="table-header">
+
+                    <div>
+
+                        <h2>Reported Complaints</h2>
+
+                        <p>
+                            Review complaints submitted by citizens.
+                        </p>
+
+                    </div>
+
+                    <span class="complaint-count">
+                        120 Complaints
+                    </span>
+
+                </div>
+
+
+                <div class="complaints-table-wrapper">
+
+                   <table class="complaints-table" id="admin-complaints-table">
+
+                        <thead>
+
+                            <tr>
+
+                                <th>ID</th>
+
+                                <th>Streetlight</th>
+
+                                <th>Fault Type</th>
+
+                                <th>Priority</th>
+
+                                <th>Date</th>
+
+                                <th>Status</th>
+
+                                <th>Action</th>
+
+                            </tr>
+
+                        </thead>
+
+
+                        <tbody>
+
+                            <tr>
+
+                                <td>#SL1001</td>
+
+                                <td>SL-RJ-0245</td>
+
+                                <td>Light Not Working</td>
+
+                                <td>
+                                    <span class="priority-high">
+                                        High
+                                    </span>
+                                </td>
+
+                                <td>20 Sep 2026</td>
+
+                                <td>
+                                    <span class="status-badge status-pending">
+                                        Pending
+                                    </span>
+                                </td>
+
+                                <td>
+                                    <a
+                                        href="assign-technician.html"
+                                        class="table-action"
+                                    >
+                                        Review
+                                    </a>
+                                </td>
+
+                            </tr>
+
+
+                            <tr>
+
+                                <td>#SL1000</td>
+
+                                <td>SL-RJ-0218</td>
+
+                                <td>Battery Problem</td>
+
+                                <td>
+                                    <span class="priority-medium">
+                                        Medium
+                                    </span>
+                                </td>
+
+                                <td>19 Sep 2026</td>
+
+                                <td>
+                                    <span class="status-badge status-progress">
+                                        In Progress
+                                    </span>
+                                </td>
+
+                                <td>
+                                    <a
+                                        href="assign-technician.html"
+                                        class="table-action"
+                                    >
+                                        View
+                                    </a>
+                                </td>
+
+                            </tr>
+
+
+                            <tr>
+
+                                <td>#SL0998</td>
+
+                                <td>SL-RJ-0187</td>
+
+                                <td>Low Brightness</td>
+
+                                <td>
+                                    <span class="priority-medium">
+                                        Medium
+                                    </span>
+                                </td>
+
+                                <td>18 Sep 2026</td>
+
+                                <td>
+                                    <span class="status-badge status-progress">
+                                        In Progress
+                                    </span>
+                                </td>
+
+                                <td>
+                                    <a
+                                        href="assign-technician.html"
+                                        class="table-action"
+                                    >
+                                        View
+                                    </a>
+                                </td>
+
+                            </tr>
+
+
+                            <tr>
+
+                                <td>#SL0995</td>
+
+                                <td>SL-RJ-0165</td>
+
+                                <td>Solar Panel Damage</td>
+
+                                <td>
+                                    <span class="priority-high">
+                                        High
+                                    </span>
+                                </td>
+
+                                <td>17 Sep 2026</td>
+
+                                <td>
+                                    <span class="status-badge status-pending">
+                                        Pending
+                                    </span>
+                                </td>
+
+                                <td>
+                                    <a
+                                        href="assign-technician.html"
+                                        class="table-action"
+                                    >
+                                        Review
+                                    </a>
+                                </td>
+
+                            </tr>
+
+
+                            <tr>
+
+                                <td>#SL0992</td>
+
+                                <td>SL-RJ-0132</td>
+
+                                <td>Pole Damage</td>
+
+                                <td>
+                                    <span class="priority-high">
+                                        High
+                                    </span>
+                                </td>
+
+                                <td>15 Sep 2026</td>
+
+                                <td>
+                                    <span class="status-badge status-resolved">
+                                        Resolved
+                                    </span>
+                                </td>
+
+                                <td>
+                                    <a
+                                        href="#"
+                                        class="table-action"
+                                    >
+                                        View
+                                    </a>
+                                </td>
+
+                            </tr>
+
+                        </tbody>
+
+                    </table>
+
+                </div>
+
+            </section>
+
+        </div>
+
+    </main>
+
+
+    <!-- Footer -->
+    <footer class="footer">
+
+        <div class="container">
+
+            <p>
+                © 2026 SolarLightCare. Solar Streetlight Fault Reporting
+                and Maintenance Management System.
+            </p>
+
+        </div>
+
+    </footer>
+    <script src="js/app.js"></script>
+
+</body>
+
+</html>

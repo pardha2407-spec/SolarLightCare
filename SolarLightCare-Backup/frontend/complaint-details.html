@@ -1,0 +1,338 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Complaint Details - SolarLightCare</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+<!-- Navigation -->
+<nav class="navbar">
+    <div class="container nav-container">
+        <a href="index.html" class="logo">☀ SolarLightCare</a>
+        <div class="nav-links">
+            <a href="citizen-dashboard.html">Dashboard</a>
+            <a href="report-complaint.html">Report Fault</a>
+            <a href="my-complaints.html">My Complaints</a>
+            <a href="index.html">Logout</a>
+        </div>
+    </div>
+</nav>
+
+<!-- Complaint Details -->
+<main class="complaint-details-page">
+    <div class="container">
+
+        <a href="my-complaints.html" class="back-link">
+            ← Back to My Complaints
+        </a>
+
+        <!-- Dynamic Header -->
+        <div class="details-header">
+            <div>
+                <p class="dashboard-label">COMPLAINT DETAILS</p>
+                <h1 id="detail-heading">Loading complaint...</h1>
+                <p id="submitted-date">Retrieving complaint information...</p>
+            </div>
+            <span id="detail-status" class="status-badge status-pending">
+                    Loading
+                </span>
+        </div>
+
+        <p id="detail-message" role="status"></p>
+
+        <div class="details-grid">
+
+            <!-- Complaint Information -->
+            <section class="details-card">
+                <h2>Complaint Information</h2>
+
+                <div class="detail-row">
+                    <span>Complaint ID</span>
+                    <strong id="detail-id">—</strong>
+                </div>
+
+                <div class="detail-row">
+                    <span>Streetlight ID</span>
+                    <strong id="detail-streetlight">—</strong>
+                </div>
+
+                <div class="detail-row">
+                    <span>Fault Type</span>
+                    <strong id="detail-fault">—</strong>
+                </div>
+
+                <div class="detail-row">
+                    <span>Priority</span>
+                    <strong id="detail-priority">—</strong>
+                </div>
+
+                <div class="detail-row">
+                    <span>Location</span>
+                    <strong id="detail-location">—</strong>
+                </div>
+
+                <div class="detail-row">
+                    <span>Nearby Landmark</span>
+                    <strong id="detail-landmark">—</strong>
+                </div>
+
+                <div class="detail-description">
+                    <span>Description</span>
+                    <p id="detail-description">—</p>
+                </div>
+            </section>
+
+            <!-- Status Timeline -->
+            <section class="details-card">
+                <h2>Complaint Status</h2>
+                <div class="timeline" id="detail-timeline"></div>
+            </section>
+
+            <!-- Repair Information -->
+            <section class="details-card">
+                <h2>Repair Information</h2>
+
+                <div class="detail-row">
+                    <span>Inspection Result</span>
+                    <strong id="detail-inspection">Not recorded</strong>
+                </div>
+
+                <div class="detail-row">
+                    <span>Repair Details</span>
+                    <strong id="detail-repair">Not recorded</strong>
+                </div>
+
+                <div class="detail-row">
+                    <span>Parts Replaced</span>
+                    <strong id="detail-parts">Not recorded</strong>
+                </div>
+            </section>
+
+            <!-- Photo -->
+            <section class="details-card">
+                <h2>Fault Photo</h2>
+                <div class="photo-placeholder">
+                    <div>📷</div>
+                    <p>Photo storage has not been connected yet.</p>
+                </div>
+            </section>
+
+            <!-- Technician Information -->
+            <section class="details-card">
+                <h2>Technician Information</h2>
+                <div class="not-assigned">
+                    <div>🔧</div>
+                    <h3>Assignment Not Configured</h3>
+                    <p>Technician assignment will be displayed here after assignment functionality is implemented.</p>
+                </div>
+            </section>
+
+        </div>
+    </div>
+</main>
+
+<!-- Footer -->
+<footer class="footer">
+    <div class="container">
+        <p>
+            © 2026 SolarLightCare. Solar Streetlight Fault Reporting
+            and Maintenance Management System.
+        </p>
+    </div>
+</footer>
+
+<script>
+    const API_URL = "http://localhost:8080/api/complaints";
+
+    // Supports URLs such as complaint-details.html?id=1
+    const params = new URLSearchParams(window.location.search);
+    const complaintId = params.get("id") || "1";
+
+    const timelineSteps = [
+        {
+            status: "SUBMITTED",
+            title: "Complaint Submitted",
+            description: "The complaint has been submitted."
+        },
+        {
+            status: "VERIFIED",
+            title: "Verification",
+            description: "The complaint has been verified by the administrator."
+        },
+        {
+            status: "ASSIGNED",
+            title: "Technician Assigned",
+            description: "The complaint has been assigned for maintenance."
+        },
+        {
+            status: "IN_PROGRESS",
+            title: "Repair",
+            description: "Inspection or repair work is in progress."
+        },
+        {
+            status: "RESOLVED",
+            title: "Resolved",
+            description: "The repair work has been completed."
+        },
+        {
+            status: "CLOSED",
+            title: "Closed",
+            description: "The complaint has been closed."
+        }
+    ];
+
+    function showValue(value) {
+        return value === null || value === undefined || String(value).trim() === ""
+            ? "Not recorded"
+            : String(value);
+    }
+
+    function formatFault(value) {
+        if (!value) return "Not recorded";
+
+        return value
+            .replace(/[-_]/g, " ")
+            .replace(/\b\w/g, character => character.toUpperCase());
+    }
+
+    function setText(id, value) {
+        document.getElementById(id).textContent = showValue(value);
+    }
+
+    function renderTimeline(status) {
+        const timeline = document.getElementById("detail-timeline");
+        timeline.replaceChildren();
+
+        if (status === "REJECTED") {
+            const item = document.createElement("div");
+            item.className = "timeline-item active";
+
+            const dot = document.createElement("div");
+            dot.className = "timeline-dot";
+
+            const content = document.createElement("div");
+            const heading = document.createElement("h3");
+            heading.textContent = "Complaint Rejected";
+
+            const description = document.createElement("small");
+            description.textContent = "The complaint has been rejected.";
+
+            content.append(heading, description);
+            item.append(dot, content);
+            timeline.append(item);
+            return;
+        }
+
+        const currentIndex = timelineSteps.findIndex(
+            step => step.status === status
+        );
+
+        timelineSteps.forEach((step, index) => {
+            const item = document.createElement("div");
+            item.className = "timeline-item";
+
+            if (currentIndex >= 0 && index <= currentIndex) {
+                item.classList.add("active");
+            }
+
+            const dot = document.createElement("div");
+            dot.className = "timeline-dot";
+
+            const content = document.createElement("div");
+
+            const heading = document.createElement("h3");
+            heading.textContent = step.title;
+
+            const progress = document.createElement("p");
+
+            if (index < currentIndex) {
+                progress.textContent = "Completed";
+            } else if (index === currentIndex) {
+                progress.textContent = "Current status";
+            } else {
+                progress.textContent = "Waiting";
+            }
+
+            const description = document.createElement("small");
+            description.textContent = step.description;
+
+            content.append(heading, progress, description);
+            item.append(dot, content);
+            timeline.append(item);
+        });
+    }
+
+    async function loadComplaintDetails() {
+        const message = document.getElementById("detail-message");
+
+        try {
+            const response = await fetch(
+                `${API_URL}/${encodeURIComponent(complaintId)}`
+            );
+
+            if (!response.ok) {
+                throw new Error(
+                    response.status === 404
+                        ? "Complaint not found. Check the complaint ID."
+                        : `Could not load complaint (HTTP ${response.status}).`
+                );
+            }
+
+            const complaint = await response.json();
+            const status = (complaint.status || "SUBMITTED").toUpperCase();
+
+            document.getElementById("detail-heading").textContent =
+                `Complaint #${complaint.id}`;
+
+            setText("submitted-date", "Submission date is not recorded in the database");
+            setText("detail-id", `#${complaint.id}`);
+            setText("detail-streetlight", complaint.streetlightId);
+            setText("detail-fault", formatFault(complaint.faultType));
+            setText("detail-priority", complaint.priority);
+            setText("detail-location", complaint.location);
+            setText("detail-landmark", complaint.landmark);
+            setText("detail-description", complaint.description);
+
+            setText("detail-inspection", complaint.inspectionResult);
+            setText("detail-repair", complaint.repairDetails);
+            setText("detail-parts", complaint.partsReplaced);
+
+            const badge = document.getElementById("detail-status");
+            badge.textContent = formatFault(status);
+            badge.className = "status-badge";
+
+            const badgeClass = {
+                SUBMITTED: "status-pending",
+                VERIFIED: "status-pending",
+                ASSIGNED: "status-pending",
+                IN_PROGRESS: "status-in-progress",
+                RESOLVED: "status-resolved",
+                CLOSED: "status-resolved",
+                REJECTED: "status-rejected"
+            };
+
+            badge.classList.add(badgeClass[status] || "status-pending");
+
+            renderTimeline(status);
+            message.textContent = "";
+
+        } catch (error) {
+            console.error("Failed to load complaint:", error);
+            message.textContent =
+                `${error.message} Ensure the Spring Boot backend is running.`;
+            document.getElementById("detail-heading").textContent =
+                "Unable to load complaint";
+        }
+    }
+
+    loadComplaintDetails();
+</script>
+
+</body>
+</html>

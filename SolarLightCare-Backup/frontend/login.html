@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Login | SolarLightCare</title>
+
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body class="auth-page">
+
+<!-- ================= NAVBAR ================= -->
+
+<header class="navbar">
+
+    <div class="logo">
+        <span class="logo-icon">☀</span>
+        <span>SolarLightCare</span>
+    </div>
+
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="register.html" class="nav-login">Register</a>
+    </nav>
+
+</header>
+
+
+<!-- ================= LOGIN ================= -->
+
+<main class="auth-container">
+
+    <div class="auth-card">
+
+        <div class="auth-icon">
+            ☀
+        </div>
+
+        <h1>Welcome Back</h1>
+
+        <p class="auth-subtitle">
+            Login to your SolarLightCare account
+        </p>
+
+
+        <form id="loginForm">
+
+            <!-- EMAIL -->
+
+            <div class="form-group">
+
+                <label for="email">
+                    Email Address
+                </label>
+
+                <input
+                    type="email"
+                    id="email"
+                    name="email"
+                    placeholder="Enter your email"
+                    required
+                >
+
+            </div>
+
+
+            <!-- PASSWORD -->
+
+            <div class="form-group">
+
+                <div class="label-row">
+
+                    <label for="password">
+                        Password
+                    </label>
+
+                    <a href="#" class="forgot-password">
+                        Forgot password?
+                    </a>
+
+                </div>
+
+                <input
+                    type="password"
+                    id="password"
+                    name="password"
+                    placeholder="Enter your password"
+                    required
+                >
+
+            </div>
+
+
+            <!-- ROLE -->
+
+            <div class="form-group">
+
+                <label for="role">
+                    Login As
+                </label>
+
+                <select id="role" name="role">
+
+                    <option value="citizen">
+                        Citizen
+                    </option>
+
+                    <option value="admin">
+                        Administrator
+                    </option>
+
+                    <option value="technician">
+                        Technician
+                    </option>
+
+                </select>
+
+            </div>
+
+
+            <!-- LOGIN BUTTON -->
+
+            <button
+                type="submit"
+                class="btn btn-primary auth-button"
+            >
+                Login
+            </button>
+
+        </form>
+
+
+        <div class="auth-divider">
+            <span>OR</span>
+        </div>
+
+
+        <p class="register-text">
+
+            Don't have an account?
+
+            <a href="register.html">
+                Create an account
+            </a>
+
+        </p>
+
+    </div>
+
+</main>
+
+
+<!-- ================= FOOTER ================= -->
+
+<footer>
+
+    <div class="footer-logo">
+        ☀ SolarLightCare
+    </div>
+
+    <p>
+        Solar Streetlight Fault Reporting and
+        Maintenance Management System
+    </p>
+
+</footer>
+<script src="js/app.js"></script>
+
+</body>
+</html>

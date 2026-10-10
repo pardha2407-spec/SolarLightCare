@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Citizen Dashboard - SolarLightCare</title>
+
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+    <!-- Navigation -->
+    <nav class="navbar">
+
+        <div class="container nav-container">
+
+            <a href="index.html" class="logo">
+                ☀ SolarLightCare
+            </a>
+
+            <div class="nav-links">
+                <a href="citizen-dashboard.html">Dashboard</a>
+                <a href="report-complaint.html">Report Fault</a>
+                <a href="my-complaints.html">My Complaints</a>
+                <a href="index.html">Logout</a>
+            </div>
+
+        </div>
+
+    </nav>
+
+
+    <!-- Dashboard -->
+    <main class="dashboard-page">
+
+        <div class="container">
+
+            <!-- Welcome Section -->
+            <section class="dashboard-header">
+
+                <div>
+                    <p class="dashboard-label">CITIZEN PORTAL</p>
+
+                    <h1>Welcome back, Citizen!</h1>
+
+                    <p>
+                        Report streetlight faults, track your complaints,
+                        and stay updated on repair progress.
+                    </p>
+                </div>
+
+                <a href="report-complaint.html" class="btn btn-primary">
+                    + Report a Fault
+                </a>
+
+            </section>
+
+
+            <!-- Statistics -->
+            <section class="dashboard-stats">
+
+                <div class="dashboard-stat-card">
+
+                    <div class="stat-icon">
+                        📋
+                    </div>
+
+                    <div>
+                        <h3>5</h3>
+                        <p>Total Complaints</p>
+                    </div>
+
+                </div>
+
+
+                <div class="dashboard-stat-card">
+
+                    <div class="stat-icon warning">
+                        ⏳
+                    </div>
+
+                    <div>
+                        <h3>2</h3>
+                        <p>Pending</p>
+                    </div>
+
+                </div>
+
+
+                <div class="dashboard-stat-card">
+
+                    <div class="stat-icon info">
+                        🔧
+                    </div>
+
+                    <div>
+                        <h3>1</h3>
+                        <p>In Progress</p>
+                    </div>
+
+                </div>
+
+
+                <div class="dashboard-stat-card">
+
+                    <div class="stat-icon success">
+                        ✓
+                    </div>
+
+                    <div>
+                        <h3>2</h3>
+                        <p>Resolved</p>
+                    </div>
+
+                </div>
+
+            </section>
+
+
+            <!-- Recent Complaints -->
+            <section class="dashboard-section">
+
+                <div class="section-heading">
+
+                    <div>
+                        <h2>Recent Complaints</h2>
+
+                        <p>
+                            Track the latest streetlight complaints you submitted.
+                        </p>
+                    </div>
+
+                    <a href="my-complaints.html">
+                        View All
+                    </a>
+
+                </div>
+
+
+                <div class="complaints-table-wrapper">
+
+                    <table class="complaints-table">
+
+                        <thead>
+
+                            <tr>
+                                <th>Complaint ID</th>
+                                <th>Streetlight</th>
+                                <th>Fault Type</th>
+                                <th>Date</th>
+                                <th>Status</th>
+                            </tr>
+
+                        </thead>
+
+
+                        <tbody>
+
+                            <tr>
+
+                                <td>#SL1001</td>
+
+                                <td>SL-RJ-0245</td>
+
+                                <td>Light Not Working</td>
+
+                                <td>20 Sep 2026</td>
+
+                                <td>
+                                    <span class="status-badge status-pending">
+                                        Pending
+                                    </span>
+                                </td>
+
+                            </tr>
+
+
+                            <tr>
+
+                                <td>#SL0998</td>
+
+                                <td>SL-RJ-0187</td>
+
+                                <td>Low Brightness</td>
+
+                                <td>18 Sep 2026</td>
+
+                                <td>
+                                    <span class="status-badge status-progress">
+                                        In Progress
+                                    </span>
+                                </td>
+
+                            </tr>
+
+
+                            <tr>
+
+                                <td>#SL0992</td>
+
+                                <td>SL-RJ-0132</td>
+
+                                <td>Battery Problem</td>
+
+                                <td>15 Sep 2026</td>
+
+                                <td>
+                                    <span class="status-badge status-resolved">
+                                        Resolved
+                                    </span>
+                                </td>
+
+                            </tr>
+
+                        </tbody>
+
+                    </table>
+
+                </div>
+
+            </section>
+
+
+            <!-- Quick Actions -->
+            <section class="dashboard-section">
+
+                <div class="section-heading">
+
+                    <div>
+                        <h2>Quick Actions</h2>
+
+                        <p>
+                            Access commonly used SolarLightCare features.
+                        </p>
+                    </div>
+
+                </div>
+
+
+                <div class="quick-actions">
+
+                    <a href="report-complaint.html" class="quick-action-card">
+
+                        <div class="quick-action-icon">
+                            📝
+                        </div>
+
+                        <div>
+                            <h3>Report a Fault</h3>
+
+                            <p>
+                                Report a damaged or faulty streetlight.
+                            </p>
+                        </div>
+
+                    </a>
+
+
+                    <a href="my-complaints.html" class="quick-action-card">
+
+                        <div class="quick-action-icon">
+                            📊
+                        </div>
+
+                        <div>
+                            <h3>Track Complaints</h3>
+
+                            <p>
+                                Check the status of your submitted complaints.
+                            </p>
+                        </div>
+
+                    </a>
+
+
+                    <a href="#" class="quick-action-card">
+
+                        <div class="quick-action-icon">
+                            👤
+                        </div>
+
+                        <div>
+                            <h3>My Profile</h3>
+
+                            <p>
+                                View and manage your account information.
+                            </p>
+                        </div>
+
+                    </a>
+
+                </div>
+
+            </section>
+
+        </div>
+
+    </main>
+
+
+    <!-- Footer -->
+    <footer class="footer">
+
+        <div class="container">
+
+            <p>
+                © 2026 SolarLightCare. Solar Streetlight Fault Reporting
+                and Maintenance Management System.
+            </p>
+
+        </div>
+
+    </footer>
+    <script src="js/app.js"></script>
+
+
+</body>
+</html>

@@ -1,0 +1,202 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Technician Dashboard - SolarLightCare</title>
+
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container nav-container">
+
+            <a href="index.html" class="logo">
+                ☀ SolarLightCare
+            </a>
+
+            <div class="nav-links">
+                <a href="technician-dashboard.html">Dashboard</a>
+                <a href="update-complaint.html">Update Complaint</a>
+                <a href="index.html">Logout</a>
+            </div>
+
+        </div>
+    </nav>
+
+    <!-- Technician Dashboard -->
+    <main class="technician-page">
+        <div class="container">
+
+            <!-- Header -->
+            <section class="technician-header">
+                <div>
+                    <p class="dashboard-label">TECHNICIAN PORTAL</p>
+
+                    <h1>Welcome, Technician!</h1>
+
+                    <p>
+                        View streetlight complaints and monitor
+                        maintenance progress.
+                    </p>
+                </div>
+            </section>
+
+            <!-- Statistics -->
+            <section class="dashboard-stats">
+
+                <div class="dashboard-stat-card">
+                    <div class="stat-icon">📋</div>
+                    <div>
+                        <h3 id="technician-total">0</h3>
+                        <p>Total Complaints</p>
+                    </div>
+                </div>
+
+                <div class="dashboard-stat-card">
+                    <div class="stat-icon warning">⏳</div>
+                    <div>
+                        <h3 id="technician-pending">0</h3>
+                        <p>Pending</p>
+                    </div>
+                </div>
+
+                <div class="dashboard-stat-card">
+                    <div class="stat-icon info">🔧</div>
+                    <div>
+                        <h3 id="technician-progress">0</h3>
+                        <p>In Progress</p>
+                    </div>
+                </div>
+
+                <div class="dashboard-stat-card">
+                    <div class="stat-icon success">✓</div>
+                    <div>
+                        <h3 id="technician-resolved">0</h3>
+                        <p>Resolved</p>
+                    </div>
+                </div>
+
+            </section>
+
+            <!-- Complaints -->
+            <section class="dashboard-section">
+
+                <div class="section-heading">
+                    <div>
+                        <h2>Streetlight Complaints</h2>
+                        <p>
+                            Complaints currently recorded in the system.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="complaints-table-wrapper">
+
+                    <table class="complaints-table"
+                           id="technician-complaints-table">
+
+                        <thead>
+                            <tr>
+                                <th>Complaint ID</th>
+                                <th>Streetlight</th>
+                                <th>Fault Type</th>
+                                <th>Priority</th>
+                                <th>Status</th>
+                                <th>Action</th>
+                            </tr>
+                        </thead>
+
+                        <tbody id="technician-complaints-body">
+                            <tr>
+                                <td colspan="6">Loading complaints...</td>
+                            </tr>
+                        </tbody>
+
+                    </table>
+
+                </div>
+            </section>
+
+            <!-- Technician Instructions -->
+            <section class="dashboard-section">
+
+                <div class="section-heading">
+                    <div>
+                        <h2>Work Process</h2>
+                        <p>
+                            Follow these steps when handling a complaint.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="technician-process">
+
+                    <div class="process-item">
+                        <div class="process-number">1</div>
+                        <div>
+                            <h3>Review</h3>
+                            <p>
+                                Check the complaint details and fault type.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="process-item">
+                        <div class="process-number">2</div>
+                        <div>
+                            <h3>Inspect</h3>
+                            <p>
+                                Visit the streetlight and inspect the fault.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="process-item">
+                        <div class="process-number">3</div>
+                        <div>
+                            <h3>Repair</h3>
+                            <p>
+                                Perform the required maintenance work.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="process-item">
+                        <div class="process-number">4</div>
+                        <div>
+                            <h3>Update</h3>
+                            <p>
+                                Record the repair result and update the
+                                complaint status.
+                            </p>
+                        </div>
+                    </div>
+
+                </div>
+            </section>
+
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>
+                © 2026 SolarLightCare. Solar Streetlight Fault Reporting
+                and Maintenance Management System.
+            </p>
+        </div>
+    </footer>
+
+    <script src="js/app.js"></script>
+
+</body>
+</html>
+```

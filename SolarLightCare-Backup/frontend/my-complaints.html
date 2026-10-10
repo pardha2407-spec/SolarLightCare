@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>My Complaints - SolarLightCare</title>
+
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+    <!-- Navigation -->
+    <nav class="navbar">
+
+        <div class="container nav-container">
+
+            <a href="index.html" class="logo">
+                ☀ SolarLightCare
+            </a>
+
+            <div class="nav-links">
+                <a href="citizen-dashboard.html">Dashboard</a>
+                <a href="report-complaint.html">Report Fault</a>
+                <a href="my-complaints.html">My Complaints</a>
+                <a href="index.html">Logout</a>
+            </div>
+
+        </div>
+
+    </nav>
+
+
+    <!-- My Complaints -->
+    <main class="complaints-page">
+
+        <div class="container">
+
+            <div class="complaints-header">
+
+                <div>
+                    <p class="dashboard-label">CITIZEN PORTAL</p>
+
+                    <h1>My Complaints</h1>
+
+                    <p>
+                        View and track the status of all your submitted
+                        streetlight complaints.
+                    </p>
+                </div>
+
+                <a
+                    href="report-complaint.html"
+                    class="btn btn-primary"
+                >
+                    + Report a Fault
+                </a>
+
+            </div>
+
+
+            <!-- Filters -->
+            <div class="complaints-filter">
+
+                <div class="form-group">
+
+                    <label for="status-filter">
+                        Filter by Status
+                    </label>
+
+                    <select id="status-filter">
+
+                        <option value="all">
+                            All Complaints
+                        </option>
+
+                        <option value="pending">
+                            Pending
+                        </option>
+
+                        <option value="progress">
+                            In Progress
+                        </option>
+
+                        <option value="resolved">
+                            Resolved
+                        </option>
+
+                    </select>
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label for="search-complaint">
+                        Search Complaint
+                    </label>
+
+                    <input
+                        type="text"
+                        id="search-complaint"
+                        placeholder="Search by complaint ID..."
+                    >
+
+                </div>
+
+            </div>
+
+
+            <!-- Complaints List -->
+
+            <!-- Complaints List: populated dynamically by app.js -->
+            <div class="complaints-list" id="complaints-list">
+                <p>Loading complaints...</p>
+            </div>
+
+            <!-- Complaint 1 -->
+                <div class="complaint-card">
+
+                    <div class="complaint-card-header">
+
+                        <div>
+
+                            <span class="complaint-id">
+                                #SL1001
+                            </span>
+
+                            <h2>Streetlight SL-RJ-0245</h2>
+
+                        </div>
+
+                        <span class="status-badge status-pending">
+                            Pending
+                        </span>
+
+                    </div>
+
+
+                    <div class="complaint-details">
+
+                        <div>
+                            <span>Fault Type</span>
+                            <strong>Light Not Working</strong>
+                        </div>
+
+                        <div>
+                            <span>Location</span>
+                            <strong>Main Road, Area 1</strong>
+                        </div>
+
+                        <div>
+                            <span>Submitted</span>
+                            <strong>20 Sep 2026</strong>
+                        </div>
+
+                        <div>
+                            <span>Priority</span>
+                            <strong>High</strong>
+                        </div>
+
+                    </div>
+
+
+                    <div class="complaint-card-footer">
+
+                        <p>
+                            Your complaint is waiting for verification.
+                        </p>
+
+                        <a
+                            href="complaint-details.html"
+                            class="view-complaint"
+                        >
+                            View Details →
+                        </a>
+
+                    </div>
+
+                </div>
+
+
+                <!-- Complaint 2 -->
+                <div class="complaint-card">
+
+                    <div class="complaint-card-header">
+
+                        <div>
+
+                            <span class="complaint-id">
+                                #SL0998
+                            </span>
+
+                            <h2>Streetlight SL-RJ-0187</h2>
+
+                        </div>
+
+                        <span class="status-badge status-progress">
+                            In Progress
+                        </span>
+
+                    </div>
+
+
+                    <div class="complaint-details">
+
+                        <div>
+                            <span>Fault Type</span>
+                            <strong>Low Brightness</strong>
+                        </div>
+
+                        <div>
+                            <span>Location</span>
+                            <strong>Market Road</strong>
+                        </div>
+
+                        <div>
+                            <span>Submitted</span>
+                            <strong>18 Sep 2026</strong>
+                        </div>
+
+                        <div>
+                            <span>Priority</span>
+                            <strong>Medium</strong>
+                        </div>
+
+                    </div>
+
+
+                    <div class="complaint-card-footer">
+
+                        <p>
+                            A technician has been assigned to this complaint.
+                        </p>
+
+                        <a
+                            href="complaint-details.html"
+                            class="view-complaint"
+                        >
+                            View Details →
+                        </a>
+
+                    </div>
+
+                </div>
+
+
+                <!-- Complaint 3 -->
+                <div class="complaint-card">
+
+                    <div class="complaint-card-header">
+
+                        <div>
+
+                            <span class="complaint-id">
+                                #SL0992
+                            </span>
+
+                            <h2>Streetlight SL-RJ-0132</h2>
+
+                        </div>
+
+                        <span class="status-badge status-resolved">
+                            Resolved
+                        </span>
+
+                    </div>
+
+
+                    <div class="complaint-details">
+
+                        <div>
+                            <span>Fault Type</span>
+                            <strong>Battery Problem</strong>
+                        </div>
+
+                        <div>
+                            <span>Location</span>
+                            <strong>Temple Road</strong>
+                        </div>
+
+                        <div>
+                            <span>Submitted</span>
+                            <strong>15 Sep 2026</strong>
+                        </div>
+
+                        <div>
+                            <span>Priority</span>
+                            <strong>Medium</strong>
+                        </div>
+
+                    </div>
+
+
+                    <div class="complaint-card-footer">
+
+                        <p>
+                            The streetlight fault has been successfully resolved.
+                        </p>
+
+                        <a
+                            href="complaint-details.html"
+                            class="view-complaint"
+                        >
+                            View Details →
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </main>
+
+
+    <!-- Footer -->
+    <footer class="footer">
+
+        <div class="container">
+
+            <p>
+                © 2026 SolarLightCare. Solar Streetlight Fault Reporting
+                and Maintenance Management System.
+            </p>
+
+        </div>
+
+    </footer>
+    <script src="js/app.js"></script>
+
+</body>
+
+</html>

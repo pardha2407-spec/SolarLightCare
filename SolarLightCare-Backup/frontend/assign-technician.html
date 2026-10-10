@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Assign Technician - SolarLightCare</title>
+
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+    <!-- Navigation -->
+    <nav class="navbar">
+
+        <div class="container nav-container">
+
+            <a href="index.html" class="logo">
+                ☀ SolarLightCare
+            </a>
+
+            <div class="nav-links">
+                <a href="admin-dashboard.html">Dashboard</a>
+                <a href="manage-complaints.html">Complaints</a>
+                <a href="assign-technician.html">Assign Technician</a>
+                <a href="index.html">Logout</a>
+            </div>
+
+        </div>
+
+    </nav>
+
+
+    <!-- Assign Technician -->
+    <main class="assign-page">
+
+        <div class="container">
+
+            <a href="manage-complaints.html" class="back-link">
+                ← Back to Complaints
+            </a>
+
+
+            <div class="assign-header">
+
+                <div>
+
+                    <p class="dashboard-label">
+                        ADMIN PORTAL
+                    </p>
+
+                    <h1>Assign Technician</h1>
+
+                    <p>
+                        Review the complaint and assign a technician
+                        for repair.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="assign-grid">
+
+                <!-- Complaint Information -->
+                <section class="details-card">
+
+                    <h2>Complaint Information</h2>
+
+
+                    <div class="detail-row">
+
+                        <span>Complaint ID</span>
+
+                        <strong>#SL1001</strong>
+
+                    </div>
+
+
+                    <div class="detail-row">
+
+                        <span>Streetlight ID</span>
+
+                        <strong>SL-RJ-0245</strong>
+
+                    </div>
+
+
+                    <div class="detail-row">
+
+                        <span>Fault Type</span>
+
+                        <strong>Light Not Working</strong>
+
+                    </div>
+
+
+                    <div class="detail-row">
+
+                        <span>Priority</span>
+
+                        <strong class="priority-high">
+                            High
+                        </strong>
+
+                    </div>
+
+
+                    <div class="detail-row">
+
+                        <span>Location</span>
+
+                        <strong>
+                            Main Road, Area 1
+                        </strong>
+
+                    </div>
+
+
+                    <div class="detail-row">
+
+                        <span>Submitted</span>
+
+                        <strong>
+                            20 September 2026
+                        </strong>
+
+                    </div>
+
+
+                    <div class="detail-description">
+
+                        <span>Description</span>
+
+                        <p>
+                            The solar streetlight is not turning on
+                            during the night. The area becomes dark
+                            and requires inspection and repair.
+                        </p>
+
+                    </div>
+
+                </section>
+
+
+                <!-- Assignment Form -->
+                <section class="details-card">
+
+                    <h2>Technician Assignment</h2>
+
+                    <p class="form-section-description">
+                        Select an available technician for this complaint.
+                    </p>
+
+
+                    <form action="#" method="post">
+
+                        <div class="form-group">
+
+                            <label for="technician">
+                                Select Technician
+                            </label>
+
+                            <select
+                                id="technician"
+                                name="technician"
+                                required
+                            >
+
+                                <option value="">
+                                    Select a technician
+                                </option>
+
+                                <option value="tech001">
+                                    Ravi Kumar — Available
+                                </option>
+
+                                <option value="tech002">
+                                    Suresh Reddy — Available
+                                </option>
+
+                                <option value="tech003">
+                                    Arjun Rao — Busy
+                                </option>
+
+                                <option value="tech004">
+                                    Naveen Kumar — Available
+                                </option>
+
+                            </select>
+
+                        </div>
+
+
+                        <div class="form-group">
+
+                            <label for="scheduled-date">
+                                Scheduled Date
+                            </label>
+
+                            <input
+                                type="date"
+                                id="scheduled-date"
+                                name="scheduledDate"
+                                required
+                            >
+
+                        </div>
+
+
+                        <div class="form-group">
+
+                            <label for="admin-note">
+                                Admin Note
+                            </label>
+
+                            <textarea
+                                id="admin-note"
+                                name="adminNote"
+                                rows="5"
+                                placeholder="Add instructions for the technician..."
+                            ></textarea>
+
+                        </div>
+
+
+                        <div class="assignment-summary">
+
+                            <div>
+                                <span>Current Status</span>
+
+                                <strong>
+                                    Pending
+                                </strong>
+                            </div>
+
+
+                            <div>
+                                <span>After Assignment</span>
+
+                                <strong>
+                                    Assigned
+                                </strong>
+                            </div>
+
+                        </div>
+
+
+                        <div class="form-actions">
+
+                            <a
+                                href="manage-complaints.html"
+                                class="btn btn-secondary"
+                            >
+                                Cancel
+                            </a>
+
+                            <button
+                                type="submit"
+                                class="btn btn-primary"
+                            >
+                                Assign Technician
+                            </button>
+
+                        </div>
+
+                    </form>
+
+                </section>
+
+            </div>
+
+        </div>
+
+    </main>
+
+
+    <!-- Footer -->
+    <footer class="footer">
+
+        <div class="container">
+
+            <p>
+                © 2026 SolarLightCare. Solar Streetlight Fault Reporting
+                and Maintenance Management System.
+            </p>
+
+        </div>
+
+    </footer>
+    <script src="js/app.js"></script>
+
+</body>
+
+</html>

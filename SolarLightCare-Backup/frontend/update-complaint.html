@@ -1,0 +1,222 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Update Complaint - SolarLightCare</title>
+
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+<!-- Navigation -->
+<nav class="navbar">
+    <div class="container nav-container">
+
+        <a href="index.html" class="logo">
+            ☀ SolarLightCare
+        </a>
+
+        <div class="nav-links">
+            <a href="technician-dashboard.html">Dashboard</a>
+            <a href="update-complaint.html">Update Complaint</a>
+            <a href="index.html">Logout</a>
+        </div>
+
+    </div>
+</nav>
+
+<!-- Update Complaint -->
+<main class="update-page">
+    <div class="container">
+
+        <a href="technician-dashboard.html" class="back-link">
+            ← Back to Dashboard
+        </a>
+
+        <div class="update-header">
+            <div>
+                <p class="dashboard-label">TECHNICIAN PORTAL</p>
+
+                <h1>Update Complaint</h1>
+
+                <p>
+                    View complaint information and update its
+                    maintenance status.
+                </p>
+            </div>
+        </div>
+
+        <div class="update-grid">
+
+            <!-- Complaint Information -->
+            <section class="details-card">
+
+                <h2>Complaint Information</h2>
+
+                <div class="form-group">
+                    <label for="update-complaint-id">
+                        Select Complaint
+                    </label>
+
+                    <select id="update-complaint-id" required>
+                        <option value="">Loading complaints...</option>
+                    </select>
+                </div>
+
+                <div class="detail-row">
+                    <span>Complaint ID</span>
+                    <strong id="update-display-id">—</strong>
+                </div>
+
+                <div class="detail-row">
+                    <span>Streetlight ID</span>
+                    <strong id="update-streetlight-id">—</strong>
+                </div>
+
+                <div class="detail-row">
+                    <span>Fault Type</span>
+                    <strong id="update-fault-type">—</strong>
+                </div>
+
+                <div class="detail-row">
+                    <span>Priority</span>
+                    <strong id="update-priority">—</strong>
+                </div>
+
+                <div class="detail-row">
+                    <span>Location</span>
+                    <strong id="update-location">—</strong>
+                </div>
+
+                <div class="detail-row">
+                    <span>Current Status</span>
+                    <strong id="update-current-status">—</strong>
+                </div>
+
+                <div class="detail-description">
+                    <span>Citizen Description</span>
+                    <p id="update-description">
+                        Select a complaint to view its details.
+                    </p>
+                </div>
+
+            </section>
+
+            <!-- Update Form -->
+            <section class="details-card">
+
+                <h2>Repair Update</h2>
+
+                <p class="form-section-description">
+                    Enter the latest repair information.
+                </p>
+
+                <form id="complaintUpdateForm">
+
+                    <div class="form-group">
+                        <label for="status">Complaint Status</label>
+
+                        <select id="status" name="status" required>
+                            <option value="IN_PROGRESS">In Progress</option>
+                            <option value="RESOLVED">Resolved</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="inspection">Inspection Result</label>
+
+                        <textarea
+                                id="inspection"
+                                name="inspection"
+                                rows="4"
+                                placeholder="Describe what you found during inspection..."
+                                required
+                        ></textarea>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="repair">Repair Details</label>
+
+                        <textarea
+                                id="repair"
+                                name="repair"
+                                rows="4"
+                                placeholder="Describe the repair or maintenance work performed..."
+                                required
+                        ></textarea>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="parts">Parts Replaced</label>
+
+                        <input
+                                type="text"
+                                id="parts"
+                                name="parts"
+                                placeholder="Example: Solar battery"
+                        >
+                    </div>
+
+                    <div class="form-group">
+                        <label for="repair-photo">Upload Repair Photo</label>
+
+                        <input
+                                type="file"
+                                id="repair-photo"
+                                name="repairPhoto"
+                                accept="image/*"
+                        >
+
+                        <small>
+                            Photo storage will be connected in the AWS S3 step.
+                        </small>
+                    </div>
+
+                    <div class="form-actions">
+
+                        <a
+                                href="technician-dashboard.html"
+                                class="btn btn-secondary"
+                        >
+                            Cancel
+                        </a>
+
+                        <button
+                                type="submit"
+                                class="btn btn-primary"
+                                id="save-complaint-update"
+                        >
+                            Save Update
+                        </button>
+
+                    </div>
+
+                    <p id="update-message" role="status"></p>
+
+                </form>
+
+            </section>
+
+        </div>
+    </div>
+</main>
+
+<!-- Footer -->
+<footer class="footer">
+    <div class="container">
+        <p>
+            © 2026 SolarLightCare. Solar Streetlight Fault Reporting
+            and Maintenance Management System.
+        </p>
+    </div>
+</footer>
+
+<script src="js/app.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,243 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Admin Dashboard - SolarLightCare</title>
+
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container nav-container">
+
+            <a href="index.html" class="logo">
+                ☀ SolarLightCare
+            </a>
+
+            <div class="nav-links">
+                <a href="admin-dashboard.html">Dashboard</a>
+                <a href="manage-complaints.html">Complaints</a>
+                <a href="assign-technician.html">Assign Technician</a>
+                <a href="index.html">Logout</a>
+            </div>
+
+        </div>
+    </nav>
+
+    <!-- Admin Dashboard -->
+    <main class="admin-page">
+        <div class="container">
+
+            <!-- Header -->
+            <section class="admin-header">
+                <div>
+                    <p class="dashboard-label">ADMIN PORTAL</p>
+
+                    <h1>Admin Dashboard</h1>
+
+                    <p>
+                        Monitor streetlight complaints and manage
+                        maintenance operations.
+                    </p>
+                </div>
+            </section>
+
+            <!-- Statistics -->
+            <section class="dashboard-stats">
+
+                <div class="dashboard-stat-card">
+                    <div class="stat-icon">📋</div>
+
+                    <div>
+                        <h3 id="total-complaints">0</h3>
+                        <p>Total Complaints</p>
+                    </div>
+                </div>
+
+                <div class="dashboard-stat-card">
+                    <div class="stat-icon warning">⏳</div>
+
+                    <div>
+                        <h3 id="pending-complaints">0</h3>
+                        <p>Pending</p>
+                    </div>
+                </div>
+
+                <div class="dashboard-stat-card">
+                    <div class="stat-icon info">🔧</div>
+
+                    <div>
+                        <h3 id="in-progress-complaints">0</h3>
+                        <p>In Progress</p>
+                    </div>
+                </div>
+
+                <div class="dashboard-stat-card">
+                    <div class="stat-icon success">✓</div>
+
+                    <div>
+                        <h3 id="resolved-complaints">0</h3>
+                        <p>Resolved</p>
+                    </div>
+                </div>
+
+            </section>
+
+            <!-- Management Actions -->
+            <section class="dashboard-section">
+
+                <div class="section-heading">
+                    <div>
+                        <h2>Complaint Management</h2>
+
+                        <p>
+                            Manage reported streetlight faults.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="admin-actions">
+
+                    <a href="manage-complaints.html"
+                       class="admin-action-card">
+
+                        <div class="admin-action-icon">📋</div>
+
+                        <div>
+                            <h3>Manage Complaints</h3>
+
+                            <p>
+                                Review and verify reported faults.
+                            </p>
+                        </div>
+
+                    </a>
+
+                    <a href="assign-technician.html"
+                       class="admin-action-card">
+
+                        <div class="admin-action-icon">👷</div>
+
+                        <div>
+                            <h3>Assign Technician</h3>
+
+                            <p>
+                                Assign technicians to verified complaints.
+                            </p>
+                        </div>
+
+                    </a>
+
+                </div>
+            </section>
+
+            <!-- Recent Complaints -->
+            <section class="dashboard-section">
+
+                <div class="section-heading">
+                    <div>
+                        <h2>Recent Complaints</h2>
+
+                        <p>
+                            Latest complaints requiring attention.
+                        </p>
+                    </div>
+
+                    <a href="manage-complaints.html">View All</a>
+                </div>
+
+                <div class="complaints-table-wrapper">
+
+                    <table class="complaints-table"
+                           id="dashboard-complaints-table">
+
+                        <thead>
+                            <tr>
+                                <th>Complaint ID</th>
+                                <th>Streetlight</th>
+                                <th>Fault</th>
+                                <th>Priority</th>
+                                <th>Status</th>
+                            </tr>
+                        </thead>
+
+                        <tbody id="recent-complaints-body">
+                            <tr>
+                                <td colspan="5">Loading complaints...</td>
+                            </tr>
+                        </tbody>
+
+                    </table>
+
+                </div>
+            </section>
+
+            <!-- System Overview -->
+            <section class="dashboard-section">
+
+                <div class="section-heading">
+                    <div>
+                        <h2>System Overview</h2>
+
+                        <p>
+                            Current SolarLightCare system information.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="system-overview">
+
+                    <div>
+                        <span>Registered Streetlights</span>
+                        <strong>Not configured</strong>
+                    </div>
+
+                    <div>
+                        <span>Active Technicians</span>
+                        <strong>Not configured</strong>
+                    </div>
+
+                    <div>
+                        <span>Resolved Complaints</span>
+                        <strong id="overview-resolved">0</strong>
+                    </div>
+
+                    <div>
+                        <span>Resolution Rate</span>
+                        <strong id="resolution-rate">0%</strong>
+                    </div>
+
+                </div>
+
+                <p class="dashboard-note">
+                    Streetlight and technician totals will be connected
+                    after those records are added to the backend.
+                </p>
+
+            </section>
+
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>
+                © 2026 SolarLightCare. Solar Streetlight Fault Reporting
+                and Maintenance Management System.
+            </p>
+        </div>
+    </footer>
+
+    <script src="js/app.js"></script>
+
+</body>
+</html>
+```

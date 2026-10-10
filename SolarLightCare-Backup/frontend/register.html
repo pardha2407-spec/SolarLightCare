@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Register | SolarLightCare</title>
+
+    <link rel="stylesheet" href="css/style.css">
+
+</head>
+
+
+<body class="auth-page">
+
+
+<!-- NAVBAR -->
+
+<header class="navbar">
+
+    <div class="logo">
+
+        <span class="logo-icon">☀</span>
+
+        <span>SolarLightCare</span>
+
+    </div>
+
+
+    <nav>
+
+        <a href="index.html">
+            Home
+        </a>
+
+        <a href="login.html" class="nav-login">
+            Login
+        </a>
+
+    </nav>
+
+</header>
+
+
+
+<!-- REGISTER -->
+
+<main class="auth-container">
+
+    <div class="auth-card">
+
+        <div class="auth-icon">
+            ☀
+        </div>
+
+
+        <h1>
+            Create Account
+        </h1>
+
+
+        <p class="auth-subtitle">
+            Join SolarLightCare and report streetlight faults
+        </p>
+
+
+
+        <form id="registerForm">
+
+
+            <!-- NAME -->
+
+            <div class="form-group">
+
+                <label for="name">
+                    Full Name
+                </label>
+
+                <input
+                    type="text"
+                    id="name"
+                    placeholder="Enter your full name"
+                    required
+                >
+
+            </div>
+
+
+
+            <!-- EMAIL -->
+
+            <div class="form-group">
+
+                <label for="register-email">
+                    Email Address
+                </label>
+
+                <input
+                    type="email"
+                    id="register-email"
+                    placeholder="Enter your email"
+                    required
+                >
+
+            </div>
+
+
+
+            <!-- PHONE -->
+
+            <div class="form-group">
+
+                <label for="phone">
+                    Phone Number
+                </label>
+
+                <input
+                    type="tel"
+                    id="phone"
+                    placeholder="Enter your phone number"
+                    required
+                >
+
+            </div>
+
+
+
+            <!-- PASSWORD -->
+
+            <div class="form-group">
+
+                <label for="register-password">
+                    Password
+                </label>
+
+                <input
+                    type="password"
+                    id="register-password"
+                    placeholder="Create a password"
+                    required
+                >
+
+            </div>
+
+
+
+            <!-- CONFIRM PASSWORD -->
+
+            <div class="form-group">
+
+                <label for="confirm-password">
+                    Confirm Password
+                </label>
+
+                <input
+                    type="password"
+                    id="confirm-password"
+                    placeholder="Confirm your password"
+                    required
+                >
+
+            </div>
+
+
+
+            <!-- ROLE -->
+
+            <div class="form-group">
+
+                <label for="register-role">
+                    Account Type
+                </label>
+
+                <select id="register-role">
+
+                    <option value="citizen">
+                        Citizen
+                    </option>
+
+                    <option value="technician">
+                        Technician
+                    </option>
+
+                </select>
+
+            </div>
+
+
+
+            <button
+                type="submit"
+                class="btn btn-primary auth-button"
+            >
+                Create Account
+            </button>
+
+
+        </form>
+
+
+
+        <div class="auth-divider">
+            <span>OR</span>
+        </div>
+
+
+
+        <p class="register-text">
+
+            Already have an account?
+
+            <a href="login.html">
+                Login
+            </a>
+
+        </p>
+
+
+    </div>
+
+</main>
+
+
+
+<!-- FOOTER -->
+
+<footer>
+
+    <div class="footer-logo">
+        ☀ SolarLightCare
+    </div>
+
+    <p>
+        Solar Streetlight Fault Reporting and
+        Maintenance Management System
+    </p>
+
+</footer>
+<script src="js/app.js"></script>
+
+
+</body>
+
+</html>
